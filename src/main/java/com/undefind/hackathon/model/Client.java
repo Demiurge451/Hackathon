@@ -1,11 +1,26 @@
 package com.undefind.hackathon.model;
 
-public class Client {
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "clients")
+public class Client {
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "email")
     private String email;
+
+    @Column(name = "phone")
     private String phone;
+
+    //… getters and setters
+
 
     public Integer getId() {
         return id;
